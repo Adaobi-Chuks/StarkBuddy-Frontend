@@ -6,7 +6,7 @@ const Navbar = () => {
         <nav className="flex justify-between items-center px-6 py-4">
             <div className="flex items-center">
                 <img
-                    src="/src/assets/StarkBuddyNoBG.png"
+                    src="/assets/StarkBuddyNoBG.png"
                     alt="StarkBuddy Logo"
                     className="h-16 w-16 mr-4"
                 />
