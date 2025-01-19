@@ -5,7 +5,7 @@ const ChatPage = () => {
     return (
         <PageTemplate
             title="Chat with StarkBuddy"
-            placeholder="Ask anything about StarkNet..."
+            placeholder="Ask anything..."
             endpoint="/api/chat"
         />
     );

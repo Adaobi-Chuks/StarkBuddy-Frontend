@@ -63,7 +63,7 @@ const PageTemplate = ({ title, placeholder }) => {
 
       {/* Main Content */}
       <div className="flex flex-col items-center justify-center px-4 py-8 md:px-6 lg:px-8 min-h-[80vh]">
-        <h1 className="text-2xl md:text-4xl font-bold text-[#3fe8ab] mb-6 text-center">{title}</h1>
+        <h1 className="text-sm md:text-4xl font-bold text-[#3fe8ab] mb-6 text-center">{title}</h1>
         <div className="relative w-full max-w-4xl bg-[#1c1c1c] rounded-lg shadow-lg p-6 md:p-8 flex flex-col space-y-6">
           {/* Chat Messages - Scrollable Area */}
           <div
@@ -108,7 +108,7 @@ const PageTemplate = ({ title, placeholder }) => {
             />
             <button
               onClick={handleSend}
-              className="px-4 py-2 bg-[#3fe8ab] text-black font-bold rounded-lg hover:bg-[#1c7e67] transition z-20 absolute right-1 top-0 bottom-0 m-1"
+              className="px-4 py-2 bg-[#3fe8ab] text-black font-bold rounded-lg hover:bg-[#1c7e67] transition z-20 flex items-center justify-center"
             >
               Send
             </button>
