@@ -1,10 +1,10 @@
 import React from "react";
 
-const ChatInput = ({ value, onChange, onKeyPress, onSend }) => (
+const ChatInput = ({ value, placeholder, onChange, onKeyPress, onSend }) => (
     <div className="flex items-center space-x-2 mt-4 relative w-full">
         <input
             type="text"
-            placeholder="Type a message..."
+            placeholder={placeholder}
             value={value}
             onChange={onChange}
             onKeyPress={onKeyPress}

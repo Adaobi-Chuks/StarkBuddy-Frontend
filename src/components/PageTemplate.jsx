@@ -66,7 +66,7 @@ const PageTemplate = ({ title, placeholder }) => {
           </div>
 
           {showScrollToBottom && <ScrollToBottomButton onClick={() => chatEndRef.current.scrollIntoView({ behavior: "smooth" })} />}
-          <ChatInput value={input} onChange={(e) => setInput(e.target.value)} onKeyPress={handleKeyPress} onSend={handleSend} />
+          <ChatInput value={input} placeholder={placeholder} onChange={(e) => setInput(e.target.value)} onKeyPress={handleKeyPress} onSend={handleSend} />
         </div>
       </div>
     </div>
