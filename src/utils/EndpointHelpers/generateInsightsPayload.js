@@ -1,7 +1,7 @@
-import { isValidContractAddress } from "../validateContractAddress";
+import { isValidTokenAddress } from "../validateContractAddress";
 
 const generateInsightsPayload = (input, username) => {
-    if (isValidContractAddress(input.trim())) {
+    if (isValidTokenAddress(input.trim())) {
         return {
             userName: username,
             name: username,
