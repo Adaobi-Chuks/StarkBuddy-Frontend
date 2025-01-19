@@ -3,7 +3,7 @@ import { FaTwitter, FaTelegram } from "react-icons/fa";
 
 const Agent = () => {
     return (
-        <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 md:space-x-8 py-8">
+        <div className="flex flex-col md:flex-row justify-center items-center space-y-6 md:space-y-0 mb-16 md:mb-0 md:space-x-8 py-8">
             <a
                 href="https://t.me/starkBuddy_ai_bot"
                 target="_blank"
