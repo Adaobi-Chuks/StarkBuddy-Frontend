@@ -5,7 +5,7 @@ const generateInsightsPayload = (input, username) => {
         return {
             userName: "28",
             name: "ug",
-            text: input
+            tokenAddress: input
         };
     } else {
         return "Invalid address.";
@@ -13,7 +13,7 @@ const generateInsightsPayload = (input, username) => {
 };
 
 const formatInsightsReply = (data) => {
-    return data.results.map(item => `${item.title}: ${item.description}`).join("\n");
+    return data.response.text;
 };
 
 export {
