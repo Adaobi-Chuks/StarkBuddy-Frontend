@@ -50,6 +50,10 @@ const PageTemplate = ({ title, placeholder, endpoint, generatePayload, formatRep
         }
       } catch (error) {
         console.error("Error fetching reply:", error);
+        const systemMessage = { type: "system", text: "Invalid Input." };
+        setMessages((prevMessages) => [...prevMessages, systemMessage]);
+      } finally {
+        setIsLoading(false);
       }
     }
   };

@@ -1,15 +1,15 @@
 import { isValidTokenAddress } from "../validateContractAddress";
 
 const generateInsightsPayload = (input, username) => {
-    if (isValidTokenAddress(input.trim())) {
+    // if (isValidTokenAddress(input.trim())) {
         return {
             userName: username,
             name: username,
-            tokenAddress: input
+            tokenAddress: input.trim()
         };
-    } else {
-        return "Invalid address.";
-    }
+    // } else {
+    //     return "Invalid address.";
+    // }
 };
 
 const formatInsightsReply = (data) => {

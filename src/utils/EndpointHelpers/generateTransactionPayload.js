@@ -5,7 +5,7 @@ const generateTransactionPayload = (input, username) => {
         return {
             userName: username,
             name: username,
-            txhash: input
+            txhash: input.trim()
         };
     } else {
         return "Invalid transaction hash.";

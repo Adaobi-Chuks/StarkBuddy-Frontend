@@ -1,6 +1,6 @@
 const isValidTokenAddress = (address) => {
-    const tokenAddressRegex = /^0x[a-fA-F0-9]{40}$/;
-    return tokenAddressRegex.test(address);
+    const transactionHashRegex = /^0x([A-Fa-f0-9]{64})$/;
+    return transactionHashRegex.test(address);
 };
 
 export {
