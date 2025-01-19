@@ -15,15 +15,15 @@ const Navbar = () => {
             </div>
             
             {/* Icons */}
-            <ul className="flex items-center space-x-4 md:space-x-6">
+            <ul className="flex items-center space-x-4 md:space-x-14">
                 <li>
                     <a
                         href="https://t.me/starkBuddy_ai_bot"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center h-10 w-10 md:h-12 md:w-12 bg-[#3fe8ab] text-white rounded-lg hover:bg-[#32d097] transition-all"
+                        className="flex items-center justify-center h-10 w-10 md:h-14 md:w-14 bg-[#3fe8ab] text-white rounded-lg hover:bg-[#32d097] transform hover:scale-105 transition-all"
                     >
-                        <FaTelegram className="text-xl md:text-2xl align-middle" />
+                        <FaTelegram className="text-xl md:text-4xl align-middle" />
                     </a>
                 </li>
                 <li>
@@ -31,9 +31,9 @@ const Navbar = () => {
                         href="https://x.com/StarkBuddy_ai"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center justify-center h-10 w-10 md:h-12 md:w-12 bg-[#3fe8ab] text-white rounded-lg hover:bg-[#32d097] transition-all"
+                        className="flex items-center justify-center h-10 w-10 md:h-14 md:w-14 bg-[#3fe8ab] text-white rounded-lg hover:bg-[#32d097] transform hover:scale-105 transition-all"
                     >
-                        <FaTwitter className="text-xl md:text-2xl align-middle" />
+                        <FaTwitter className="text-xl md:text-4xl align-middle" />
                     </a>
                 </li>
             </ul>

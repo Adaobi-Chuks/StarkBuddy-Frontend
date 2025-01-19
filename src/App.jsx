@@ -1,6 +1,6 @@
 import './index.css'
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Features from "./components/Features";
@@ -11,7 +11,6 @@ import TransactionPage from './pages/TransactionPage';
 
 const App = () => {
   return (
-    <Router>
       <div className="relative min-h-screen bg-black text-white">
         <div className="absolute inset-0 animate-pulse bg-[url('/animated-bg.svg')] bg-cover opacity-10"></div>
         <Navbar />
@@ -28,7 +27,6 @@ const App = () => {
           <Route path="/transactions" element={<TransactionPage />} />
         </Routes>
       </div>
-    </Router>
   );
 };
 

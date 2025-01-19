@@ -3,28 +3,61 @@ import { FiChevronLeft } from "react-icons/fi";
 import Message from "./Message";
 import ScrollToBottomButton from "./ScrollToBottomButton";
 import ChatInput from "./ChatInput";
+import { getOrCreateUsername } from "../utils/getUsername";
 
-const PageTemplate = ({ title, placeholder }) => {
+const PageTemplate = ({ title, placeholder, endpoint, generatePayload, formatReply }) => {
+  const [username, setUsername] = useState(null);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
   const [showScrollToBottom, setShowScrollToBottom] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const chatEndRef = useRef(null);
   const chatBoxRef = useRef(null);
 
-  const handleSend = () => {
+  const handleSend = async () => {
     if (input.trim()) {
       const newMessages = [...messages, { type: "user", text: input }];
       setMessages(newMessages);
       setInput("");
-      setTimeout(() => {
-        const systemMessage = {
-          type: "system",
-          text: "This is an automated response to your message.",
-        };
-        setMessages((prevMessages) => [...prevMessages, systemMessage]);
-      }, 1000);
+
+      try {
+        setIsLoading(true);
+        // Dynamically generate payload based on the page type
+        const payload = generatePayload(input, username);
+
+        if (payload === "Invalid transaction hash." || payload === "Invalid address.") {
+          const systemMessage = { type: "system", text: payload };
+          setMessages((prevMessages) => [...prevMessages, systemMessage]);
+          setIsLoading(false);
+          return;
+        }
+        // Send the dynamic payload to the API endpoint
+        const response = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+        const formattedResponse = formatReply(data);
+
+        if (formattedResponse) {
+          const systemMessage = { type: "system", text: formattedResponse };
+          setMessages((prevMessages) => [...prevMessages, systemMessage]);
+          setIsLoading(false);
+        }
+      } catch (error) {
+        console.error("Error fetching reply:", error);
+      }
     }
   };
+
+  useEffect(() => {
+    const user = getOrCreateUsername();
+    setUsername(user);
+  }, []);
 
   useEffect(() => {
     if (chatEndRef.current) {
@@ -62,6 +95,8 @@ const PageTemplate = ({ title, placeholder }) => {
             {messages.map((message, index) => (
               <Message key={index} type={message.type} text={message.text} />
             ))}
+            {/* Show loading indicator while awaiting response */}
+            {isLoading && <Message type="system" text="Typing..." />}
             <div ref={chatEndRef} />
           </div>
 
