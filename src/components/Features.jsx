@@ -21,13 +21,11 @@ const Features = () => {
     ];
 
     return (
-        <section className="py-12  px-20 bg-black text-white">
-            <div className="container ml-auto">
-                <div className="grid gap-24 md:grid-cols-3"> {/* Increased gap */}
-                    {features.map((feature, index) => (
-                        <Card key={index} {...feature} />
-                    ))}
-                </div>
+        <section className="py-8 px-4 bg-black text-white">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {features.map((feature, index) => (
+                    <Card key={index} {...feature} />
+                ))}
             </div>
         </section>
     );
