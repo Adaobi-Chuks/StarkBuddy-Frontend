@@ -3,8 +3,8 @@ import { isValidContractAddress } from "../validateContractAddress";
 const generateInsightsPayload = (input, username) => {
     if (isValidContractAddress(input.trim())) {
         return {
-            userName: "28",
-            name: "ug",
+            userName: username,
+            name: username,
             tokenAddress: input
         };
     } else {

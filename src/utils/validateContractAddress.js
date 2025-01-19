@@ -1,8 +1,8 @@
-const isValidContractAddress = (address) => {
-    const contractAddressRegex = /^0x([A-Fa-f0-9]{40})$/;
-    return contractAddressRegex.test(address);
+const isValidTokenAddress = (address) => {
+    const tokenAddressRegex = /^0x([A-Fa-f0-9]{40})$/;
+    return tokenAddressRegex.test(address);
 };
 
 export {
-    isValidContractAddress
+    isValidTokenAddress
 }
