@@ -12,7 +12,7 @@ const ChatInput = ({ value, onChange, onKeyPress, onSend }) => (
         />
         <button
             onClick={onSend}
-            className="px-4 py-2 bg-[#3fe8ab] text-black font-bold rounded-lg hover:bg-[#1c7e67] transition z-20 flex items-center justify-center"
+            className="px-4 py-2 bg-[#31c08c] text-black font-bold rounded-lg hover:bg-[#3fe8ab] transition z-20 flex items-center justify-center"
         >
             Send
         </button>
