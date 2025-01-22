@@ -16,5 +16,5 @@ StarkBuddy is an AI-powered assistant designed to provide real-time insights int
 - **Social Media**: Telegram API, Twitter API
 
 ## Contributors
-- **[Ekete Emmanuel](https://github.com/ceasar28)** - Web3 & Backend Developer
 - **[Chuks-Aginam Adaobi](https://github.com/Adaobi-Chuks)** - Fullstack Developer
+- **[Ekete Emmanuel](https://github.com/ceasar28)** - Web3 & Backend Developer
