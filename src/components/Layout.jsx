@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Outlet, Link, useLocation } from "react-router-dom";
 import { FiMenu, FiX } from "react-icons/fi";
-import { FaCoins , FaComments, FaMicrophoneAlt, FaChartLine, FaExchangeAlt, FaUserCircle } from "react-icons/fa";
+import { FaCoins, FaComments, FaMicrophoneAlt, FaChartLine, FaExchangeAlt } from "react-icons/fa";
 
 const Layout = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -10,7 +10,7 @@ const Layout = () => {
     return (
         <div className="flex h-[calc(100vh-5rem)] overflow-hidden z-10">
             {/* Main Content */}
-            <div className="flex-1 bg-black text-white p-6 overflow-auto z-20">
+            <div className="custom-scrollbar flex-1 bg-black text-white p-6 overflow-auto z-20">
                 <Outlet />
             </div>
 
@@ -28,51 +28,40 @@ const Layout = () => {
                     <nav className="flex flex-col space-y-10 mb-auto">
                         <Link
                             to="/chat"
-                            className={`flex items-center text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/chat" ? "text-[#3fe8ab]" : ""}`}
+                            className={`flex items-center text-base md:text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/chat" ? "text-[#3fe8ab]" : ""}`}
                         >
-                            <FaComments className="mr-4 text-xl" />
+                            <FaComments className="mr-4 text-base md:text-xl" />
                             Chat
                         </Link>
                         <Link
                             to="/voice-chat"
-                            className={`flex items-center text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/voice-chat" ? "text-[#3fe8ab]" : ""}`}
+                            className={`flex items-center text-base md:text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/voice-chat" ? "text-[#3fe8ab]" : ""}`}
                         >
-                            <FaMicrophoneAlt className="mr-4 text-xl" />
+                            <FaMicrophoneAlt className="mr-4 text-base md:text-xl" />
                             Voice Chat
                         </Link>
                         <Link
                             to="/insights"
-                            className={`flex items-center text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/insights" ? "text-[#3fe8ab]" : ""}`}
+                            className={`flex items-center text-base md:text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/insights" ? "text-[#3fe8ab]" : ""}`}
                         >
-                            <FaCoins  className="mr-4 text-xl" />
+                            <FaCoins className="mr-4 text-base md:text-xl" />
                             Token Insights
                         </Link>
                         <Link
                             to="/transactions"
-                            className={`flex items-center text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/transactions" ? "text-[#3fe8ab]" : ""}`}
+                            className={`flex items-center text-base md:text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/transactions" ? "text-[#3fe8ab]" : ""}`}
                         >
-                            <FaExchangeAlt className="mr-4 text-xl" />
+                            <FaExchangeAlt className="mr-4 text-base md:text-xl" />
                             Transaction Insights
                         </Link>
                         <Link
                             to="/trending"
-                            className={`flex items-center text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/trending" ? "text-[#3fe8ab]" : ""}`}
+                            className={`flex items-center text-base md:text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/trending" ? "text-[#3fe8ab]" : ""}`}
                         >
-                            <FaChartLine className="mr-4 text-xl" />
+                            <FaChartLine className="mr-4 text-base md:text-xl" />
                             Trending
                         </Link>
                     </nav>
-
-                    {/* Profile link at the bottom */}
-                    <div className="mt-auto mb-28">
-                        <Link
-                            to="/profile"
-                            className={`flex items-center text-xl hover:text-[#3fe8ab] transition ${location.pathname === "/profile" ? "text-[#3fe8ab]" : ""}`}
-                        >
-                            <FaUserCircle className="mr-4 text-xl" />
-                            Profile
-                        </Link>
-                    </div>
                 </div>
             </div>
         </div>

@@ -10,6 +10,7 @@ import VoiceChatPage from './pages/VoiceChatPage';
 import InsightsPage from './pages/InsightsPage';
 import TransactionPage from './pages/TransactionPage';
 import Layout from './components/Layout';
+import Trending from './pages/TrendingTokens';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
           <Route path="/voice-chat" element={<VoiceChatPage />} />
           <Route path="/insights" element={<InsightsPage />} />
           <Route path="/transactions" element={<TransactionPage />} />
+          <Route path="/trending" element={<Trending />} />
         </Route>
       </Routes>
     </div>
