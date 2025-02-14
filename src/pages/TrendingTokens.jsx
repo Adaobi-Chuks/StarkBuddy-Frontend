@@ -38,7 +38,9 @@ const TrendingTokensTab = () => {
 
     return (
         <div className="p-4">
-            {/* No header is included here since you didn’t mention it—if you need one, add it above */}
+            <h1 className="text-sm md:text-4xl font-bold text-[#3fe8ab] mb-6 text-center">
+                Trending Starknet Tokens
+            </h1>
             <div className="p-3 pb-15">
                 {/* Use a flex container with wrapping and center justification */}
                 <div className="flex flex-wrap justify-center gap-6">
